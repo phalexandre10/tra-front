@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de Equipamentos de Proteção Individual (EPIs) para segurança no trabalho">
+    <title>Catálogo de Produtos EPI</title>
+    <link rel="stylesheet" href="estilos.min.css">
+    <link rel="stylesheet" href="estilos-produto-lista.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Catálogo de Produtos EPI</h1>
+        <nav role="navigation" aria-label="Menu principal">
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre EPIs</a></li>
+                <li><a href="#formulario">Solicitar Orçamento</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="destaque">
+            <h2>Equipamentos de Proteção de Alta Qualidade</h2>
+            <p>Oferecemos os melhores equipamentos de proteção individual para garantir a segurança no ambiente de trabalho.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre EPIs</h2>
+            <p>Os Equipamentos de Proteção Individual são fundamentais para garantir a segurança dos trabalhadores em diversos ambientes.</p>
+            
+            <h3>Categorias de EPIs:</h3>
+            <ul>
+                <li>Proteção para cabeça</li>
+                <li>Proteção respiratória</li>
+                <li>Proteção para mãos</li>
+                <li>Proteção para os pés</li>
+                <li>Proteção auricular</li>
+                <li>Proteção facial e ocular</li>
+            </ul>
+            
+            <h3>Benefícios da utilização de EPIs:</h3>
+            <ol>
+                <li>Redução de acidentes de trabalho</li>
+                <li>Conformidade com normas regulamentadoras</li>
+                <li>Aumento da produtividade e segurança</li>
+                <li>Redução de afastamentos por lesões</li>
+                <li>Melhoria na qualidade de vida no trabalho</li>
+            </ol>
+        </section>
+
+        <section id="produtos" aria-labelledby="heading-produtos">
+            <h2 id="heading-produtos">Nossos Produtos</h2>
+            
+            <div class="filtros-container">
+                <h3>Filtrar por categoria:</h3>
+                <div class="filtros" role="group" aria-label="Filtros de categoria">
+                    <button class="filtro-categoria" data-categoria="todos">Todos</button>
+                    <button class="filtro-categoria" data-categoria="cabeça">Proteção para cabeça</button>
+                    <button class="filtro-categoria" data-categoria="respiratória">Proteção respiratória</button>
+                    <button class="filtro-categoria" data-categoria="mãos">Proteção para mãos</button>
+                    <button class="filtro-categoria" data-categoria="pés">Proteção para os pés</button>
+                    <button class="filtro-categoria" data-categoria="auricular">Proteção auricular</button>
+                    <button class="filtro-categoria" data-categoria="facial">Proteção facial e ocular</button>
+                </div>
+            </div>
+            
+            <div id="lista-produtos" aria-live="polite">
+                <!-- Aqui serão exibidos os produtos da API -->
+                <div class="carregando">
+                    <div class="spinner" aria-hidden="true"></div>
+                    <p>Carregando produtos...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario" aria-labelledby="heading-orcamento">
+            <h2 id="heading-orcamento">Solicitar Orçamento</h2>
+            <form id="form-orcamento" aria-label="Formulário de orçamento">
+                <div class="campo-formulario">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required aria-required="true">
+                </div>
+                
+                <div class="campo-formulario">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                
+                <div class="campo-formulario">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="DDD + número" aria-describedby="telefone-ajuda">
+                    <small id="telefone-ajuda" class="campo-ajuda">Exemplo: (11) 98765-4321</small>
+                </div>
+                
+                <div class="campo-formulario">
+                    <label for="categoria">Categoria de EPI:</label>
+                    <select id="categoria" name="categoria" required aria-required="true">
+                        <option value="">Selecione uma categoria</option>
+                        <option value="cabeca">Proteção para cabeça</option>
+                        <option value="respiratoria">Proteção respiratória</option>
+                        <option value="maos">Proteção para mãos</option>
+                        <option value="pes">Proteção para os pés</option>
+                        <option value="auricular">Proteção auricular</option>
+                        <option value="facial">Proteção facial e ocular</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+        </section>
+
+        <section id="tabela-produtos" aria-labelledby="heading-tabela">
+            <h2 id="heading-tabela">Lista de Produtos Populares</h2>
+            <div class="tabela-container">
+                <table>
+                    <caption>Produtos mais vendidos com informações detalhadas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nome do Produto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Norma Técnica</th>
+                            <th scope="col">Disponibilidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EPI-001</td>
+                            <td>Capacete de Segurança</td>
+                            <td>Proteção para cabeça</td>
+                            <td>NBR 8221</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>EPI-002</td>
+                            <td>Respirador PFF2</td>
+                            <td>Proteção respiratória</td>
+                            <td>NBR 13698</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>EPI-003</td>
+                            <td>Luvas de Látex</td>
+                            <td>Proteção para mãos</td>
+                            <td>NBR 13392</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>EPI-004</td>
+                            <td>Bota de Segurança</td>
+                            <td>Proteção para os pés</td>
+                            <td>NBR ISO 20345</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>EPI-005</td>
+                            <td>Protetor Auricular</td>
+                            <td>Proteção auricular</td>
+                            <td>NBR 16076</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>EPI-006</td>
+                            <td>Óculos de Proteção</td>
+                            <td>Proteção facial e ocular</td>
+                            <td>NBR 16360</td>
+                            <td>Em estoque</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Catálogo de Produtos EPI. Todos os direitos reservados.</p>
+        <div id="contato">
+            <h3>Contato</h3>
+            <address>
+                <p>Email: <a href="mailto:contato@zedoepi.com.br">contato@zedoepi.com.br</a></p>
+                <p>Telefone: <a href="tel:+5528999707060">(28) 99970-7060</a></p>
+            </address>
+        </div>
+    </footer>
+
+    <div id="modal-mensagem" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <!-- Modal será gerado dinamicamente pelo JavaScript -->
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/fix-form.js"></script>
+</body>
+</html> 
